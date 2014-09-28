@@ -10,6 +10,8 @@ module Yesod.Auth.Token
     , loginR
       -- * Types
     , Token
+      -- * Others
+    , tokenCreds
     ) where
 
 import Network.Mail.Mime (randomString)
@@ -78,6 +80,10 @@ postLoginR = do
     mCreds <- lift $ getTokenCreds token
     case mCreds of
         Just (TokenCreds _uid _token) ->
-            lift $ setCredsRedirect $ Creds "token" token []
+            lift $ setCredsRedirect $ tokenCreds token
         Nothing ->
             loginErrorMessageI LoginR Msg.InvalidLogin
+
+
+tokenCreds :: YesodAuth master => Text -> Creds master
+tokenCreds token = Creds "token" token []
