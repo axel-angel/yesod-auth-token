@@ -48,7 +48,7 @@ cabal-version:       >=1.10
 
 library
   -- Modules exported by the library.
-  -- exposed-modules:
+  exposed-modules: Yesod.Auth.Token
 
   -- Modules included in this library but not exported.
   -- other-modules:
@@ -59,21 +59,19 @@ library
   -- Other library packages from which modules are imported.
   build-depends:   base                    >= 4         && < 5
                  , template-haskell
-                 , text                    >= 0.7
-                 , random                  >= 1.0.0.2
-                 , mime-mail               >= 0.3
-                 , persistent              >= 1.2       && < 2.1
-                 , hamlet                  >= 1.1
-                 , yesod-core              >= 1.2       && < 1.3
-                 , yesod-form              >= 1.3       && < 1.4
-                 , yesod-auth              >= 1.3
+                 , text
+                 , random
+                 , mime-mail
+                 , persistent
+                 , hamlet
+                 , yesod-core
+                 , yesod-form
+                 , yesod-auth
 
   -- Directories containing source files.
-  -- hs-source-dirs:
+  hs-source-dirs: src
 
   -- Base language which the package is written in.
   default-language: Haskell2010
 
   ghc-options:     -Wall
-
-  exposed-modules: Yesod.Auth.Token
