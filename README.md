@@ -1,15 +1,12 @@
 # Installation
 
-As this package is not published in Hackage, you should install it locally.
+As this package is not published in Hackage, you should install it locally as a git submodule for your project.
 
-1. From the root of your project:
+1. In the directory of your project where you put external dependancies (usually `deps` or `lib`):
 
 ```bash
-# Clone the repository
-git clone https://github.com/axel-angel/yesod-auth-token.git
-
-# Delete the package's own .git folder
-rm -rf yesod-auth-token/.git
+# Add the repo as a submodule to your project
+git submodule add https://github.com/axel-angel/yesod-auth-token.git 
 ```
 
 2. In your cabal file, under `build-depends` add `yesod-auth-token`
@@ -19,7 +16,7 @@ rm -rf yesod-auth-token/.git
 # ...
 packages:
 - '.'
-- 'yesod-auth-token'
+- 'lib/yesod-auth-token' # Change the dir name if needed
 ```
 
 4. Execute `stack build` to finish the installation
