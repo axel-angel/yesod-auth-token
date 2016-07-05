@@ -1,0 +1,15 @@
+# Resolver to find libraries and deps.
+resolver: lts-6.6
+
+# This is a single package library, so we only build this.
+packages:
+- '.'
+
+# No unresolved deps.
+extra-deps: []
+
+# Override default flag values for local packages and extra-deps
+flags: {}
+
+# Extra package databases containing global packages
+extra-package-dbs: []
