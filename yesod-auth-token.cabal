@@ -48,7 +48,7 @@ cabal-version:       >=1.10
 
 library
   -- Modules exported by the library.
-  -- exposed-modules:
+  exposed-modules: Yesod.Auth.Token
 
   -- Modules included in this library but not exported.
   -- other-modules:
@@ -69,11 +69,9 @@ library
                  , yesod-auth              >= 1.4       && < 2
 
   -- Directories containing source files.
-  -- hs-source-dirs:
+  hs-source-dirs: src
 
   -- Base language which the package is written in.
   default-language: Haskell2010
 
   ghc-options:     -Wall
-
-  exposed-modules: Yesod.Auth.Token

@@ -1,8 +1,29 @@
-# Instructions
+# Installation
 
-clone this repo under in Yesod project directory. Add the cloned repo in your cabal sandbox:
+As this package is not published in Hackage, you should install it locally.
 
-`cabal sandbox add-source yesod-auth-token`
+1. From the root of your project:
+
+```bash
+# Clone the repository
+git clone https://github.com/axel-angel/yesod-auth-token.git
+
+# Delete the package's own .git folder
+rm -rf yesod-auth-token/.git
+```
+
+2. In your cabal file, under `build-depends` add `yesod-auth-token`
+3. Let `stack` know about the location of this package by adding it in `stack.yml` under:
+
+```yaml
+# ...
+packages:
+- '.'
+- 'yesod-auth-token'
+```
+
+4. Execute `stack build` to finish the installation
+
 
 # Example
 
